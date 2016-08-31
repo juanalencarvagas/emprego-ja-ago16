@@ -1,8 +1,10 @@
-<h1><%=@job.title%></h1>
+<h1><%= @job.title %></h1>
 </hr>
-Empresa:  <%=@job.company%></br>
-Localização: <%=@job.location%></br>
-Categoria: <%=@job.category%></br>
-Descrição Completa: <%=@job.description%></br>
-<%=@job.featured_job%>
+Empresa:  <%= @job.company%></br>
+Localização: <%= @job.location%></br>
+Categoria: <%= @job.category%></br>
+Descrição Completa: <%= @job.description%></br>
+<% if @job.featured? %>
+  <strong>Destaque</strong>
+<% end %>
 <%=link_to 'Voltar', root_path %>
