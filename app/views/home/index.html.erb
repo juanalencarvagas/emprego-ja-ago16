@@ -1,6 +1,6 @@
 <% @jobs.each do |job| %>
   <h1><%=link_to "<h1>#{job.title}</h1>", job %></h1>
-  <p><%=job.company %></p>
+  <p><%=job.company.name %></p>
   <p><%=job.location %></p>
   <% if job.featured? %>
     <strong>Destaque</strong>
