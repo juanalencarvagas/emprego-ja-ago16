@@ -1,15 +1,15 @@
 <%= form_for @job do |f| %>
   <%= f.label :title, 'Título' %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title %><br>
   <%= f.label :location, 'Local' %>
-  <%= f.text_field :location %>
+  <%= f.text_field :location %><br>
   <%= f.label :category, 'Categoria' %>
-  <%= f.text_field :category %>
+  <%= f.text_field :category %><br>
   <%= f.label :company_id, 'Empresa' %>
-    <%= f.collection_select(:company_id, @companies, :id, :name) %>
+    <%= f.collection_select(:company_id, @companies, :id, :name) %><br>
   <%= f.label :description, 'Descrição' %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description %><br>
   <%= f.label :featured, 'Destaque'   %>
-  <%= f.check_box :featured   %>
+  <%= f.check_box :featured   %><br>
   <%= f.submit acao_submeter %>
 <% end %>
