@@ -1,8 +1,28 @@
-<% @jobs.each do |job| %>
-  <h1><%=link_to job.title, job %></h1>
-  <p><%=job.company.name %></p>
-  <p><%=job.location %></p>
-  <% if job.featured? %>
-    <strong>Destaque</strong>
-  <% end %>
-<% end %>
+
+<div id="painel">
+
+ <div id="vagas_da_empresa">
+   <% @jobs.each do |job| %>
+
+        <div id="vaga_da_empresa">
+       <h1><%=link_to job.title, job %></h1>
+       <p><%=job.company.name %></p>
+       <p><%=job.location %></p>
+       <% if job.featured? %>
+         <strong>Destaque</strong>
+       <% end %>
+     </div>
+
+   <% end %>
+ </div>
+
+ <div id="lista_de_empresas" style="float: left; width: 200px;">
+   <h2>Empresas</h2>
+   <% @companies.each do |company| %>
+     <div>
+       <p><%=link_to company.name, company %></p>
+     </div>
+   <% end %>
+ </div>
+
+</div>

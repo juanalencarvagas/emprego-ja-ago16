@@ -2,3 +2,12 @@
 <p>Local: <%=@company.location%></p>
 <p>Email: <%=@company.mail%></p>
 <p>Telefone: <%=@company.phone%></p>
+
+<% if @company.job.count>0 %>
+  <% @company.job.each do |job| %>
+    <p><%=job.title %></p>
+    <p><%=job.category %></p>
+  <% end %>
+<% else %>
+  Nenhuma vaga disponível
+<% end %>
