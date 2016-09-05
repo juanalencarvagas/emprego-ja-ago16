@@ -39,3 +39,7 @@
   margin-right: 10px;
   margin-left: 10px;
 }
+
+#lista_de_empresas {
+  float: left; width: 200px;
+}
