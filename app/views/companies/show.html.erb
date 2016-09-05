@@ -6,7 +6,7 @@
 <% if @company.job.count>0 %>
   <% @company.job.each do |job| %>
     <p><%=job.title %></p>
-    <p><%=job.category %></p>
+    <p><%=job.category.name %></p>
   <% end %>
 <% else %>
   Nenhuma vaga disponível

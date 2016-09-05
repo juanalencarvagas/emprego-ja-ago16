@@ -2,7 +2,7 @@
 </hr>
 Empresa:  <%= @job.company.name%></br>
 Localização: <%= @job.location%></br>
-Categoria: <%= @job.category%></br>
+Categoria: <%= @job.category.name%></br>
 Descrição Completa: <%= @job.description%></br>
 <% if @job.featured? %>
   <strong>Destaque</strong>

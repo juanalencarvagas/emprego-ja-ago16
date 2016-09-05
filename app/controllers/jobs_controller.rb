@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show,:edit,:update]
   before_action :set_companies, only: [:new,:create,:edit,:update]
+  before_action :set_categories, only: [:new,:create,:edit,:update]
 
   def show
   end
@@ -33,7 +34,7 @@ class JobsController < ApplicationController
 
   private
   def job_params
-    params.require(:job).permit(:title,:location,:category,:company_id,:description, :featured)
+    params.require(:job).permit(:title,:location,:category_id,:company_id,:description, :featured)
   end
 
   def set_job
@@ -42,6 +43,10 @@ class JobsController < ApplicationController
 
   def set_companies
     @companies = Company.all
+  end
+
+  def set_categories
+    @categories = Category.all
   end
 
 end
