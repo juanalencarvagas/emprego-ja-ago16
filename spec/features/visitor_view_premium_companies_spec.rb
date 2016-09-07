@@ -2,19 +2,10 @@ require 'rails_helper'
 
 feature 'Visitor view premium companies' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                              location: 'São Paulo',
-                              phone: '11 2369 3476',
-                              mail: 'contato@campuscode.com.br')
 
-    category = Category.create(name: 'Desenvolvedor')
-
-    5.times do
-      company.jobs.create(title: 'Desenvolvedor Rails',
-                           description: 'Desenvolvedor Full Stack Rails',
-                           location: 'São Paulo - SP',
-                           category: category)
-    end
+    company = create(:company)
+    category = create(:category)
+    jobs = create_list(:job,5,company: company)
 
     visit root_path
 
