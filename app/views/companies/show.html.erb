@@ -3,10 +3,15 @@
 <p>Email: <%=@company.mail%></p>
 <p>Telefone: <%=@company.phone%></p>
 
-<% if @company.job.count>0 %>
-  <% @company.job.each do |job| %>
+<% if @company.jobs.count>0 %>
+  <% @company.jobs.each do |job| %>
     <p><%=job.title %></p>
     <p><%=job.category.name %></p>
+
+    <% if @company.premium? %>
+      <%= image_tag 'estrela.png' %>
+    <% end %>
+
   <% end %>
 <% else %>
   Nenhuma vaga disponível
