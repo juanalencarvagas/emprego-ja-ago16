@@ -2,12 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor visits job details' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
 
-    category = Category.create(name: 'Desenvolvedor')
+    company = create(:company)
+    category = create(:category)
 
     job = Job.create(title: 'Vaga de Dev',
                      category: category,
